@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>打字机效果</title>
+    <style type="text/css">
+        html,body{
+            height: 100%;
+        }
+        body{
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: blue;
+            color: white;
+            font-size: 20px;
+        }
+        .line{
+            border-right: 2px solid #eee;
+            text-align: center;
+            white-space:nowrap ;
+            overflow: hidden;
+        }
+        .animation{
+            animation: grow 4s steps(44) 1s normal both,
+            blink 1s steps(44) infinite normal;
+        }
+        @keyframes grow {
+            from{
+                width: 0;
+            }
+            to{
+                width: 96%;
+            }
+        }
+        @keyframes blink {
+            from{
+                border-right-color: #eee;
+            }
+            to{
+                border-right-color: transparent;
+            }
+        }
+    </style>
+</head>
+<body>
+<p class="line animation">由于你最近下载了不安全的文件，这些文件对你计算机的注册表进行了修改，
+    导致了你的电脑无法正常运行，如果不尽快处理这些恶意文件，你的电脑将会面临瘫痪。</p>
+<script type="text/javascript">
+
+
+    function requestFullScreen(element) {
+        var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+        if (requestMethod) {
+            requestMethod.call(element);
+        } else if (typeof window.ActiveXObject !== "undefined") {
+            var wscript = new ActiveXObject("WScript.Shell");
+            if (wscript !== null) {
+                wscript.SendKeys("{F11}");
+            }
+        }
+    }
+    onload(function () {
+        requestFullScreen(document.documentElement)
+    });
+
+
+</script>
+</body>
+</html>

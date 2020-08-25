@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;   /*取消文字的下划线*/
+            color: dodgerblue;
+            padding: 4px 6px;
+        }
+        div{
+            height: 360px;
+            width: 200px;
+            background: aquamarine;
+            text-align: center;
+            font: 40px/360px '微软雅黑';
+            border: blueviolet 1px solid;
+            display: none;
+        }
+        #div1{
+            display: block;
+        }
+        :target{
+            position:absolute ;
+            left: 0;
+            top: 21px;
+            display: block;
+
+        }
+    </style>
+</head>
+<body>
+<a href="#div1">div1</a>
+<a href="#div2">div2</a>
+<a href="#div3">div3</a>
+<div id="div1">div1</div>
+<div id="div2">div2</div>
+<div id="div3">div3</div>
+</body>
+</html>
