@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>margin重叠</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #top,#bottom{
+            height: 200px;
+            width: 200px;
+            background: purple;
+            margin: 50px;
+            display: block;
+        }
+
+        /*
+    方案一：让其中的一个盒子变为不是块级元素
+        #bottom{
+            display: inline-block;
+        }
+        */
+    /*方案二：使之处于不同的BFC*/
+
+        #wrap{
+            overflow: hidden;
+        }
+
+
+    </style>
+</head>
+<body>
+<!--
+    发生margin重叠的三个条件
+        1.处于同一个BFC；
+        2.相邻的；
+        3.块级元素。
+-->
+
+<div id="top"></div>
+
+    <!--
+    方案二：使之不相邻
+    <div style="height: 1px"></div>
+        或者设置边框给两个盒子中的任何一个
+    -->
+
+<div id="wrap">
+<div id="bottom"></div>
+</div>
+</body>
+</html>

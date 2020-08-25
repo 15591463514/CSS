@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>圣杯布局</title>
+    <style type="text/css">
+
+        /*
+            圣杯布局的大概步骤和思路：
+                1.写好整体的框架（header，container，footer）和基本样式（背景，宽高）；
+                2.给container中的三个子div设置浮动；
+                3.给父div设置清除浮动：
+                    .clearfix::after{
+                        content: "";
+                        display: block;
+                        clear: both;
+                    }
+                4.给left设置：
+                    margin-left: -100%;
+                  给right设置：
+                    margin-left: -300px;
+                5.给container设置左右的内边距：
+                    padding: 0 300px 0 200px;
+                6.如果出现横向的滚动条，则需要给container设置：
+                    box-sizing: border-box;
+                  如果未出现滚动条，则跳过此步骤；
+                7.给所有的子div设置相对定位，
+                    让left向左偏移（right: 200px），
+                    让right向右偏移(left: 300px)。
+
+        */
+
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #header, #footer {
+            width: 100%;
+            text-align: center;
+            background-color: lightgrey;
+        }
+
+        #container {
+            width: 100%;
+            padding: 0 200px;
+            box-sizing: border-box;
+        }
+
+        #left, #middle, #right {
+            float: left;
+            height: 200px;
+            position: relative;
+        }
+
+        #left {
+            width: 200px;
+            background-color: greenyellow;
+            margin-left: -100%;
+            right: 200px;
+        }
+
+        #middle {
+            width: 100%;
+            background-color: aqua;
+        }
+
+        #right {
+            width: 200px;
+            background-color: lightpink;
+            margin-left: -200px;
+            left: 200px;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+    </style>
+</head>
+<body>
+<div id="header">header</div>
+<div id="container" class="clearfix">
+    <div id="middle">middle</div>
+    <div id="left">left</div>
+    <div id="right">right</div>
+</div>
+<div id="footer">footer</div>
+</body>
+</html>

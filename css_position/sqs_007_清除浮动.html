@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>清除浮动</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #wrap{
+            /*height: 100px;*/
+            border: 1px blueviolet solid;
+            margin: 40px 100px;
+            /*overflow: hidden;*/
+            /*position: absolute;*/
+            /*float: left;*/
+
+        }
+        .clearfix{
+            *zoom:1;
+        }
+        .clearfix::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+
+        #inner{
+            height: 100px;
+            width: 100px;
+            background: lightpink;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+<!--
+清除浮动的方法：
+    1.直接给父级加高度： (扩展性不好)
+    <div style="height: 100px"></div>
+    2.开启BFC：（IE6 7 不支持BFC）
+    #wrap{overflow: hidden;/ position: absolute;/ float: left;}
+    3.br标签清除浮动：（IE6不支持; 违反了结构、行为、样式分离的原则）
+    <br clear="all" />
+    4.空标签清除浮动：（IE6下的最小高度为19px; 违反了结构、行为、样式分离的原则）
+    <div style="clear: both"></div>
+    5.伪元素清除浮动：(IE6下不支持伪元素，所以要开启额外的haslayout)
+    .clearfix{
+        *zoom:1;
+    }
+    .clearfix::after{
+        content: '';
+        display: block;
+        clear: both;
+    }
+-->
+<div id="wrap" class="clearfix">
+    <div id="inner">
+
+    </div>
+    <!--<br clear="all" />-->
+    <!--<div style="clear: both"></div>-->
+</div>
+
+</body>
+</html>

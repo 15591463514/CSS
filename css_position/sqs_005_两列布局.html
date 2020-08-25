@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>两列布局</title>
+    <style type="text/css">
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        #wrap{
+            border: #ddd 1px solid;
+            width: 600px;
+            margin: 40px auto;
+            padding: 40px;
+        }
+
+        .left{
+            /*width: 300px;
+            height: auto;
+            background: url("img/img_01.jpg")no-repeat;
+            background-size: contain;
+            */
+            float: left;
+        }
+
+        .right{
+            background: antiquewhite;
+            padding-left: 40px;
+            /*下列四行代码使一行内多余的文本显示省略号*/
+            display: block;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap" class="clearfix">
+        <div class="left">
+            <img src="img/img_01.jpg" alt="haha">
+        </div>
+        <div class="right">
+            <h3>李易峰专辑</h3>
+            <h4>￥:138</h4>
+            商品贱卖，买一送三 商品贱卖，买一送三 商品贱卖，买一送三 <br>
+            商品贱卖，买一送三 商品贱卖，买一送三 商品贱卖，买一送三 <br>
+            商品贱卖，买一送三 商品贱卖，买一送三 商品贱卖，买一送三 <br>
+            商品贱卖，买一送三 商品贱卖，买一送三 商品贱卖，买一送三 <br>
+            商品贱卖，买一送三 商品贱卖，买一送三 商品贱卖，买一送三 <br>
+            商品贱卖，买一送三 商品贱卖，买一送三 商品贱卖，买一送三 <br>
+            商品贱卖，买一送三 商品贱卖，买一送三 商品贱卖，买一送三 <br>
+            商品贱卖，买一送三 商品贱卖，买一送三 商品贱卖，买一送三 <br>
+            商品贱卖，买一送三 商品贱卖，买一送三 商品贱卖，买一送三 <br>
+            商品贱卖，买一送三 商品贱卖，买一送三 商品贱卖，买一送三 <br>
+            商品贱卖，买一送三 商品贱卖，买一送三 商品贱卖，买一送三 <br>
+            商品贱卖，买一送三 商品贱卖，买一送三 商品贱卖，买一送三 <br>
+            商品贱卖，买一送三 商品贱卖，买一送三 商品贱卖，买一送三 <br>
+            商品贱卖，买一送三 商品贱卖，买一送三 商品贱卖，买一送三 <br>
+            商品贱卖，买一送三 商品贱卖，买一送三 商品贱卖，买一送三 <br>
+
+
+        </div>
+    </div>
+</body>
+</html>

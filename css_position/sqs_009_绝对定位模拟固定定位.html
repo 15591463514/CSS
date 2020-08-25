@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>使用绝对定位模拟固定定位</title>
+    <style type="text/css">
+
+        /*
+            使用绝对定位模拟固定定位的步骤：
+            给需要进行固定定位的div设置绝对定位，然后重点来了，记住下列代码
+                html{
+                    height: 100%;
+                    overflow: hidden;
+                }
+                body{
+                    height: 100%;
+                    overflow: scroll;
+                }
+        */
+
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        html{
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body{
+            height: 100%;
+            overflow: scroll;
+        }
+
+        .test{
+            position: absolute;
+            left: 20px;
+            top: 100px;
+            height: 200px;
+            width: 100px;
+            background: lightyellow;
+        }
+    </style>
+</head>
+<body>
+<div class="test">
+    <p>可以解决IE6的不兼容fixed的问题，以及常应用于手机端</p>
+</div>
+<div style="height: 1000px">
+    更多兼容性问题，可以在 <a href="https://caniuse.com/" target="_blank">caniuse.com</a>中查询
+</div>
+</body>
+</html>
